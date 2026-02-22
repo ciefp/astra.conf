@@ -788,6 +788,39 @@ make_channel({
   },
 })
 
+
+make_channel({
+  name = "Abertis PID 8008",
+  input = {
+    "http://127.0.0.1:8001/1:0:1:3F0:EA68:0:CE4AF34:0:0:0:",
+  },
+  transform = {{
+    format = "pipe",
+      command = "/etc/astra/scripts/abertis 8008",
+  }},
+  output = {
+    "http://0.0.0.0:9999/abertis/pid8008",
+  },
+})
+
+f12084abertis0 = make_t2mi_decap({
+        name = "Abertis PID 8008",
+        input = "http://127.0.0.1:9999/abertis/pid8008",
+        plp = 0,
+        pnr = 0,
+        pid = 4096,
+})
+
+make_channel({                                                         
+  name = "12084plp0",
+  input = {
+    "t2mi://f12084abertis0",
+  },
+  output = {
+    "http://0.0.0.0:9999/abertis/pid8008plp0",
+  },             
+})
+
 -- RTRS 40.1E
 
 f3615rtrn0 = make_t2mi_decap({
