@@ -802,6 +802,20 @@ make_channel({
   },
 })
 
+make_channel({
+  name = "Abertis PID 8009",
+  input = {
+    "http://127.0.0.1:8001/1:0:1:3F1:EA69:0:CE4B138:0:0:0:",
+  },
+  transform = {{
+    format = "pipe",
+      command = "/etc/astra/scripts/abertis 8009",
+  }},
+  output = {
+    "http://0.0.0.0:9999/abertis/pid8009",
+  },
+})
+
 -- RTRS 40.1E
 
 f3615rtrn0 = make_t2mi_decap({
