@@ -1147,7 +1147,7 @@ krrt_12380_4097 = make_t2mi_decap({
         output = { "http://0.0.0.0:9999/krrt_4097", },
     })
 	
--- DTTCy 11761 H 15155 39.0E 4096
+-- DTTCy 11761 H 16515 39.0E 4096
 f11761hcy = make_t2mi_decap({
         name = "11761H T2-MI PLP0",
         input = "http://127.0.0.1:8001/1:0:1:65:3E9:0:1862DF1:0:0:0:",
@@ -1161,7 +1161,7 @@ f11761hcy = make_t2mi_decap({
         output = { "http://0.0.0.0:9999/DttCy/MX1", },
     })
 
--- DTTCy 11778 H 15155 39.0E 4096
+-- DTTCy 11778 H 16515 39.0E 4096
 f11778hcy = make_t2mi_decap({
         name = "11778H T2-MI PLP0",
         input = "http://127.0.0.1:8001/1:0:1:66:3EA:0:1862E02:0:0:0:",
@@ -1174,3 +1174,32 @@ f11778hcy = make_t2mi_decap({
         input = { "t2mi://f11778hcy", },
         output = { "http://0.0.0.0:9999/DttCy/MX2", },
     })
+
+-- DTTCy 11837 H 16515 39.0E 4096
+f11837hcy = make_t2mi_decap({
+        name = "11837H T2-MI PLP0",
+        input = "http://127.0.0.1:8001/1:0:1:65:3E9:0:1862E3D:0:0:0:",
+        plp = 0,
+        pnr = 0,
+        pid = 4096,
+    })
+    make_channel({
+        name = "DttCy11837h-MX1",
+        input = { "t2mi://f11837hcy", },
+        output = { "http://0.0.0.0:9999/DttCy11837h/MX1", },
+    })
+
+-- DTTCy 11855 H 16515 39.0E 4096
+f11855hcy = make_t2mi_decap({
+        name = "11855H T2-MI PLP0",
+        input = "http://127.0.0.1:8001/1:0:1:66:3EA:0:1862E4F:0:0:0:",
+        plp = 0,
+        pnr = 0,
+        pid = 4096,
+    })
+    make_channel({
+        name = "DttCy11855h-MX2",
+        input = { "t2mi://f11855hcy", },
+        output = { "http://0.0.0.0:9999/DttCy11855h/MX2", },
+    })
+	
