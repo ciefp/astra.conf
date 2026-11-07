@@ -788,6 +788,7 @@ make_channel({
   },
 })
 
+-- Abertis PID 8008 PLP0
 make_channel({
   name = "Abertis PID 8008",
   input = {
@@ -800,6 +801,24 @@ make_channel({
   output = {
     "http://0.0.0.0:9999/abertis/pid8008",
   },
+})
+
+f12583abertis0 = make_t2mi_decap({
+        name = "Abertis PID 8008",
+        input = "http://0.0.0.0:9999/abertis/pid8008",
+        plp = 0,
+        pnr = 0,
+        pid = 4096,
+})
+
+make_channel({                                                   
+  name = "12583plp0",
+  input = {
+    "t2mi://f12583abertis0",
+  },
+  output = {
+    "http://0.0.0.0:9999/abertis/pid8008plp0",
+  },       
 })
 
 make_channel({
@@ -1000,120 +1019,6 @@ make_channel({
   input = { "t2mi://ortmx2", },
   output = { "http://0.0.0.0:9999/ortm/x2", },
 })
-
--- Dasto Semtel 21.5E
-
-t2mi_dasto_plp0= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP0",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 0,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp0", },
-        output = { "http://0.0.0.0:9999/dasto_plp0", },
-    })
-
-t2mi_dasto_plp1= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP1",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 1,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp1", },
-        output = { "http://0.0.0.0:9999/dasto_plp1", },
-    })
-
-t2mi_dasto_plp2= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP2",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 2,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp2", },
-        output = { "http://0.0.0.0:9999/dasto_plp2", },
-    })
-
-t2mi_dasto_plp3= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP3",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 3,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp3", },
-        output = { "http://0.0.0.0:9999/dasto_plp3", },
-    })
-
-t2mi_dasto_plp4= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP4",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 4,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp4", },
-        output = { "http://0.0.0.0:9999/dasto_plp4", },
-    })
-
-t2mi_dasto_plp5= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP5",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 5,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp5", },
-        output = { "http://0.0.0.0:9999/dasto_plp5", },
-    })
-
-t2mi_dasto_plp6= make_t2mi_decap({
-        name = "11403V SID 0x01 PLP6",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 6,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11403V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp6", },
-        output = { "http://0.0.0.0:9999/dasto_plp6", },
-    })
-
-t2mi_dasto_plp7= make_t2mi_decap({
-        name = "11400V SID 0x01 PLP7",
-        input = "http://127.0.0.1:8001/1:0:1:1:1:0:D7AC88:0:0:0:",
-        plp = 7,
-        pnr = 0,
-        pid = 4095,
-    })
-
-    make_channel({
-        name = "11400V SID 0x01",
-        input = { "t2mi://t2mi_dasto_plp7", },
-        output = { "http://0.0.0.0:9999/dasto_plp7", },
-    })
 
 -- KRRT 12380 H 27500 4.8E 4096
 
