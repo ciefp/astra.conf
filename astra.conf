@@ -824,7 +824,7 @@ make_channel({
 make_channel({
   name = "Abertis PID 8009",
   input = {
-    "http://127.0.0.1:8001/1:0:1:3F1:EA69:0:CE4B138:0:0:0:",
+    "http://127.0.0.1:8001/1:0:1:3F1:EA69:0:CE4B137:0:0:0:",
   },
   transform = {{
     format = "pipe",
